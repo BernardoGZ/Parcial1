@@ -16,6 +16,13 @@ let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogeli
 
 // CREA TU FUNCION mayusculas aqui:
 
+function mayusculas(nombres){
+    for (let i = 0; i < nombres.length; i++) {
+        console.log(nombres[i].toUpperCase())
+        
+    }
+}
+
 
 
 /*
@@ -24,6 +31,19 @@ let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogeli
 
 // CREA TU FUNCION numVocales aqui:
 
+function numVocales(word){
+    var cont=0;
+    word = word.toLowerCase();
+    for (let j = 0; j < word.length; j++) {
+        if (word[j] == 'a' || word[j] == 'e' || word[j] == 'i' || word[j] == 'o' || word[j] == 'u') {
+            cont++;
+        } 
+    }
+    return cont;
+}
+
+
+
 
 /*
 ### F3 Crea una funcion llamada numVocalesArr que reciba un arreglo y mande llamar a la funcion numVocales para que escriba la longitud de cada elemento del arreglo." 
@@ -31,9 +51,13 @@ let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogeli
 
 // CREA TU FUNCION numVocalesArr aqui:
 
-
-
-
+function numVocalesArr(nombres){
+    var cont=0;
+    for (let i = 0; i < nombres.length; i++) {
+        var word = nombres[i];
+        console.log(nombres[i] + " tiene " + numVocales(word) + " vocales ")        
+    }
+}
 
 /* 
 ################ OBJETOS ###############
@@ -43,7 +67,6 @@ A) Define un objeto tipo "Perro" que reciba 3 parametros
 1) Nombre
 2) Color
 3) Raza
-
 
 B) Crea 3 objectos  con diferentes valores
 
@@ -74,21 +97,41 @@ Deberia escribir en consola
  ***/
 
 // F1
-
+    mayusculas(nombres);
 
 // F2
 
+    console.log("F2 cuenta " + numVocales("bErnardO") + " vocales");
 
 // F3
-
-
-
+    numVocalesArr(nombres);
 
 /***
  * 
  *        PRUEBA TUS OBJETOS
  * 
  ***/
+ function printInfo() {
+    console.log('Nombre: ' + this.nombre + ' , De color: ' + this.color + ', Raza: ' + this.raza);
+}
+
+ function Perro (nombre, color, raza) {
+    this.nombre = nombre;
+    this.color = color;
+    this.raza = raza;
+    this.printInfo = printInfo;
+    
+}
+
+var Coraje = new Perro('Coraje el perro cobarde', 'rosa', 'corajeraza');
+var Scrapy = new Perro('Scrapy', 'morron', 'scrapyraza');
+var Scooby = new Perro('Scooby', 'cafe', 'scoobyraza');
+
+console.log(Coraje.nombre);
+console.log(Scrapy.color);
+console.log(Scooby.raza);
+
+Scooby.printInfo();
 
 
 </script>
@@ -100,5 +143,4 @@ Deberia escribir en consola
 
 
 </body>
-
 </html>
