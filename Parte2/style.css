@@ -1,25 +1,35 @@
-header {
-
-
+* {
+  box-sizing: border-box;
 }
 
+body{
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: none;
+}
 
 h2 {
-
+  
 }
 
 .nav {
-
-
-  }
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
+  flex-grow: 3;
+}
 
   li {
-
-
+    
+    border: 1pt solid black;
+    text-align: center;
   }
 
   .content{
-
+    display: none;
 }
 
   .aside {
@@ -44,31 +54,83 @@ h2 {
 /*Device = Tablets, Ipads (portrait)
   Screen = B/w 600px to 990px*/
   @media (min-width:600px) and (max-width: 990px)  {
+    .content{
+      display: flex;
+      border: 1pt solid black;
+    }
+    .aside{
+      display: flex;
+      padding: 10%;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;  
+      border: 1pt solid black;    
+    }
+    .aside p{
+      flex-wrap: wrap;
+      border: 1pt solid black;
+      text-align: justify;
+      flex-grow: 5;
+    }
     .article {
-
+      flex-direction: column;
+      justify-content: space-around;
+    } 
+    .article p{
+      flex-wrap: wrap;
+      border: 1pt solid black;
+      text-align: justify;
+    }
+  .nav{
+    flex-direction: row;
   } 
+}
+
+/*  Big devices    */
+@media (min-width:991px) {
+
 header{
-
+  display: flex;  
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: space-around;
 }
+header h2{
+  border: 1pt solid black;
+  flex-grow: 5;
+  text-align: center;
 }
-
-/*  Small devices    */
-@media (max-width:599px) {
-
-header,.content{
-
+.content{
+  display: flex;
+  border: 1pt solid black;
 }
-
-.nav {
-
-
-  }
-
-
-.nav > li {
-
+.aside{
+  display: flex;
+  padding: 10%;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;  
+  border: 1pt solid black;    
 }
-
+.aside p{
+  flex-wrap: wrap;
+  border: 1pt solid black;
+  text-align: justify;
+  flex-grow: 5;
+}
+.article {
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+} 
+.article p{
+  flex-wrap: wrap;
+  border: 1pt solid black;
+  text-align: justify;
+}
+.nav{
+flex-direction: row;
+}
 
 }
 
